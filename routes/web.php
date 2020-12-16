@@ -22,3 +22,7 @@ Route::get('/rota2', function () {
 Route::get('/rota3', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

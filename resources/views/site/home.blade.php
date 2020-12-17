@@ -29,5 +29,15 @@
                 <a href="#" class="btn btn-primary">Ver documentos</a>
             </div>
         </div>
+        <div class="card mt-3 mb-3">
+            <div class="card-header">
+                Comunidade
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Grupo de Whatsapp</h5>
+                <p class="card-text">Participe de nosso grupo no Whatsapp. Clicando no botão abaixo você entrará no grupo.</p>
+                <a href="#" class="btn btn-primary">Entrar no grupo de Whatsapp</a>
+            </div>
+        </div>
     </div>
 @endsection

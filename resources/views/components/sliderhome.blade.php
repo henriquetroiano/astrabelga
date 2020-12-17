@@ -1,4 +1,5 @@
-<div class="container-slider"></div>
+<div class="container-slider">
+    <h4>Últimas Notícias</h4>
     <div class="splide">
         <div class="splide__track">
             <ul class="splide__list">
@@ -29,7 +30,7 @@
             </ul>
         </div>
     </div>
-
+</div>
 <script>
 	new Splide( '.splide', {
         autoplay: true,

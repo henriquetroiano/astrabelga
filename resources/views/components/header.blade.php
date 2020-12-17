@@ -28,7 +28,7 @@
           <a class="nav-link" href="#">Sobre Nós</a>
         </li>
       </ul>
-        @if (Auth::user()->name)
+        @if (Auth::user())
             <div class="dropdown mr-n5 ml-3">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ Auth::user()->name }}

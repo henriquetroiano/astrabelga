@@ -47,7 +47,7 @@
                 </div>
             </div>
         @else
-            <a href="{{ url('/login') }}" Login</a>
+            <a class="btn btn-light" href="{{ url('/login') }}" >Login</a>
         @endif
       {{--  <form class="form-inline my-2 my-lg-0 pl-2">
         <input class="form-control mr-sm-1" type="search" placeholder="Procurar no site" aria-label="Search">

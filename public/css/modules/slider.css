@@ -16,5 +16,5 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: linear-gradient(to right, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.377));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.377));
 }

@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('site.home');
 });
-Route::get('/rota2', function () {
-    return view('welcome');
+Route::get('/catalogos', function () {
+    return view('site.catalogos');
 });
 Route::get('/rota3', function () {
     return view('welcome');

@@ -9,22 +9,22 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Página Inicial</a>
+          <a class="nav-link" href="{{ url('/') }}">Página Inicial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Catálogos de Peças</a>
+          <a class="nav-link" href="{{ url('/catalogos') }}">Catálogos de Peças</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Manutenção
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Esquemas Elétricos</a>
-              <a class="dropdown-item" href="#">Manuais de Manutenção</a>
+              <a class="dropdown-item" href="{{ url('/manuais/esquemas-eletricos') }}">Esquemas Elétricos</a>
+              <a class="dropdown-item" href="{{ url('/manuais/manutencao') }}">Manuais de Manutenção</a>
             </div>
           </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sobre Nós</a>
+          <a class="nav-link" href="{{ url('/sobre-nos') }}">Sobre Nós</a>
         </li>
       </ul>
         @if (Auth::user())
@@ -33,7 +33,7 @@
                     {{ Auth::user()->name }}
                 </button>
                 <div class="dropdown-menu ml-n3" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Minha Conta</a>
+                    <a class="dropdown-item" href="{{ url('/') }}">Minha Conta</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">

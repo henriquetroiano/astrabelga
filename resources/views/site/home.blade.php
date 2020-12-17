@@ -7,6 +7,9 @@
 
     <div class="container cards pt-3">
 
+        @component('components.ads.horizontal')@endcomponent
+
+
         @component('components.sliderhome')@endcomponent
         
         <div class="card mt-3 mb-3">

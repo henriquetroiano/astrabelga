@@ -66,6 +66,7 @@
 </head>
 
 <body>
+    
     @component('components.header')@endcomponent
 
     @yield('content')

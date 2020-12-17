@@ -1,0 +1,7 @@
+.item-slide {
+    width: 100%;
+    /* max-width: 100%; */
+    height: 45vw;
+    max-height: 400px;
+    background-position: center;
+}

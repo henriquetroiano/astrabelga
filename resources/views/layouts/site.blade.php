@@ -46,13 +46,17 @@
 <meta name="theme-color" content="#ffffff">
 {{--  end favicon sections  --}}
 
-    {{--  integrated bootstrap files  --}}
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
+{{--  integrated bootstrap files  --}}
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<script src="{{ asset('js/app.js') }}"></script>
 
-    {{--  personal files  --}}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <script src="{{ asset('js/scripts.js') }}"></script>
+{{--  personal files  --}}
+<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+<script src="{{ asset('js/scripts.js') }}"></script>
+
+{{-- slider files --}}
+<script src="{{ asset('js/splidejs/splide.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/splidejs/splide.min.css') }}">
 
 </head>
 

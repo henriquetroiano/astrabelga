@@ -46,6 +46,11 @@
 <meta name="theme-color" content="#ffffff">
 {{--  end favicon sections  --}}
 
+
+{{--  adsense codes  --}}
+<script data-ad-client="ca-pub-7507067185939443" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{{--  end adsense codes  --}}
+
 {{--  integrated bootstrap files  --}}
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <script src="{{ asset('js/app.js') }}"></script>

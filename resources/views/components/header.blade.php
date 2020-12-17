@@ -1,4 +1,3 @@
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light static-top" style="background-color: #e5e5e5">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -47,7 +46,15 @@
                 </div>
             </div>
         @else
-            <a class="btn btn-light" href="{{ url('/login') }}" >Login</a>
+            <div class="dropdown mr-n5 ml-3">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+            </button>
+            <div class="dropdown-menu ml-n3" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{ url('/login') }}">Login</a>
+                <a class="dropdown-item" href="{{ url('/register') }}">Criar conta</a>
+            </div>
+        </div>
         @endif
       {{--  <form class="form-inline my-2 my-lg-0 pl-2">
         <input class="form-control mr-sm-1" type="search" placeholder="Procurar no site" aria-label="Search">

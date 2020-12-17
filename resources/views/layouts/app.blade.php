@@ -33,12 +33,12 @@
                 <ul class="navbar-nav ml-auto">
                   
                 </ul>
-                @if (Route::currentRouteName() == 'login')
+                @if (Route::currentRouteName() != 'register')
                     <a class="btn btn-primary ml-3" href="{{ route('register') }}">Não é cadastrado? Criar conta</a>
                 @elseif (Route::currentRouteName() == 'register')
                     <a class="btn btn-light ml-3" href="{{ url('/login') }}" >Possui uma conta? Fazer Login</a>
-
                 @endif
+
                 {{--  <form class="form-inline my-2 my-lg-0 pl-2">
                   <input class="form-control mr-sm-1" type="search" placeholder="Procurar no site" aria-label="Search">
                   <button class="btn btn-info my-2 my-sm-0" type="submit">Buscar</button>

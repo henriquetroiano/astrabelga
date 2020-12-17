@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light static-top" style="background-color: #e5e5e5">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{ url('/') }}">
           <img style="height: 50px" src="{{ asset('images/logo-c.png') }}" alt="">
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

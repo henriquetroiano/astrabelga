@@ -30,10 +30,11 @@
         @if (Auth::user())
             <div class="dropdown mr-n5 ml-3">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ Auth::user()->name }}
+
+                    {{ strtok(Auth::user()->name, ' ') }}
                 </button>
                 <div class="dropdown-menu ml-n3" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{ url('/') }}">Minha Conta</a>
+                    <a class="dropdown-item" href="{{ url('/account') }}">Minha Conta</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">

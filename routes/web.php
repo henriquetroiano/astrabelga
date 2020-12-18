@@ -23,6 +23,9 @@ Route::get('/catalogos', function () {
 Route::get('/catalogo/20', function () {
     return view('site.product');
 });
+Route::get('/account', function () {
+    return view('site.my_account');
+});
 
 Auth::routes();
 

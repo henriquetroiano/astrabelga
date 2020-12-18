@@ -42,8 +42,33 @@
 
         
         <div class="content">
-            
-            
+            <h5>Resultados:</h5>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th style="width: 13%" scope="col">ID</th>
+                    <th scope="col-11">Nome</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><a href="{{ url('/catalogo/20') }}">Farol - Dianteiro Esquerdo</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td><a href="{{ url('/catalogo/20') }}">Farol - Dianteiro Direito</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td><a href="{{ url('/catalogo/20') }}">Farol de milha - Dianteiro Direito</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td><a href="{{ url('/catalogo/20') }}">Farol de milha - Dianteiro Esquerdo</a></td>
+                  </tr>
+                </tbody>
+              </table>
 
         </div>
         

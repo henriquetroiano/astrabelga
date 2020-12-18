@@ -20,8 +20,8 @@ Route::get('/', function () {
 Route::get('/catalogos', function () {
     return view('site.catalogos');
 });
-Route::get('/rota3', function () {
-    return view('welcome');
+Route::get('/catalogo/20', function () {
+    return view('site.product');
 });
 
 Auth::routes();

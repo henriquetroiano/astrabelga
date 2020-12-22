@@ -8,13 +8,13 @@
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
+        <li class="nav-item @if(Route::currentRouteName() == 'home') active @endif" >
           <a class="nav-link" href="{{ url('/') }}">Página Inicial</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item @if(Route::currentRouteName() == 'catalogos') active @endif">
           <a class="nav-link" href="{{ url('/catalogos') }}">Catálogos de Peças</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown @if(Route::currentRouteName() == 'esquemas' || Route::currentRouteName() == 'manuais') active @endif">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Manutenção
             </a>
@@ -23,7 +23,7 @@
               <a class="dropdown-item" href="{{ url('/manuais/manutencao') }}">Manuais de Manutenção</a>
             </div>
           </li>
-        <li class="nav-item">
+        <li class="nav-item @if(Route::currentRouteName() == 'sobre') active @endif">
           <a class="nav-link" href="{{ url('/sobre-nos') }}">Sobre Nós</a>
         </li>
       </ul>

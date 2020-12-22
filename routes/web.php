@@ -16,17 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('site.home');
-});
+})->name('home');
 Route::get('/catalogos', function () {
     return view('site.catalogos');
-});
+})->name('catalogos');
 Route::get('/catalogo/20', function () {
     return view('site.product');
-});
+})->name('produtos');
 Route::get('/account', function () {
     return view('site.my_account');
-});
-Route::get('/admin', ['App\Http\Controllers\AdminController', 'index']);
+})->name('account');
 
 Auth::routes();
 

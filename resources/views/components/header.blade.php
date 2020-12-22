@@ -36,7 +36,7 @@
                 <div class="dropdown-menu ml-n3" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{ url('/account') }}">Minha Conta</a>
                     @if (Auth::user()->level == '1')
-                        <a class="dropdown-item" href="{{ url('/admin') }}">Painel do Admin</a>
+                        <a class="dropdown-item" href="{{ url('/admin-panel') }}">Painel do Admin</a>
                     @endif
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();

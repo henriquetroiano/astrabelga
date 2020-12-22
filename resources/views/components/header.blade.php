@@ -27,7 +27,7 @@
           <a class="nav-link" href="{{ url('/sobre-nos') }}">Sobre Nós</a>
         </li>
       </ul>
-        @if (Auth::user())
+        @if (Auth::user() )
             <div class="dropdown mr-n5 ml-3">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -35,6 +35,9 @@
                 </button>
                 <div class="dropdown-menu ml-n3" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{ url('/account') }}">Minha Conta</a>
+                    @if (Auth::user()->level == '1')
+                        <a class="dropdown-item" href="{{ url('/admin-panel') }}">Painel do Admin</a>
+                    @endif
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">

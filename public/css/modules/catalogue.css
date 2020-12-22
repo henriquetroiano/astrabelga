@@ -9,6 +9,10 @@
 .catalogue > span {
     font-size: 0.8rem;
 }
+.catalogue > button.filter {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 .catalogue .content {
     width: 100%;
     display: flex;
@@ -29,4 +33,17 @@
     height: 100%;
     text-decoration: none;
     color: unset;
+}
+.catalogue form .container-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    width: max-content;
+}
+.catalogue form .container-items > div {
+    width: 100%;
+}
+.catalogue form .container-items > button[type="submit"] {
+    width: 100%;
 }

@@ -26,6 +26,7 @@ Route::get('/catalogo/20', function () {
 Route::get('/account', function () {
     return view('site.my_account');
 });
+Route::get('/admin', ['App\Http\Controllers\AdminController', 'index']);
 
 Auth::routes();
 

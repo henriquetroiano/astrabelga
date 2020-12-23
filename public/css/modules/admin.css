@@ -93,4 +93,10 @@
         flex-direction: column;
         align-items: center;
     }
+    .container.admin .left-nav {
+        width: 80%;
+    }
+    .container.admin .content {
+        width: 80%;
+    }
 }

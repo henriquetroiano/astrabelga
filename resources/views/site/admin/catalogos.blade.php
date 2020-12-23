@@ -25,19 +25,27 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                    @foreach ($produtos as $p)
+                                    if($produtos) {
+                                          @foreach ($produtos as $p)
+                                                <tr>
+                                                      <th scope="row" class="id">{{ $p->id }}</th>
+                                                      <td>
+                                                            <a href="{{ url('/catalogo') . '/' . $p->id }}">{{ $p->name }}</a>
+                                                      </td>
+                                                      <td class="actions">
+                                                            <a href="{{ url('/admin/catalogo/edit') . '/' . $p->id }}"><i class="fas fa-edit"></i></a>
+      
+                                                            <a href="{{ url('/admin/catalogo/delete') . '/' . $p->id }}"><i class="fas fa-trash-alt"></i></a>
+                                                      </td>
+                                                </tr>
+                                          @endforeach
+                                    } else {
                                           <tr>
-                                                <th scope="row" class="id">{{ $p->id }}</th>
-                                                <td>
-                                                      <a href="{{ url('/catalogo') . '/' . $p->id }}">{{ $p->name }}</a>
-                                                </td>
-                                                <td class="actions">
-                                                      <a href="{{ url('/admin/catalogo/edit') . '/' . $p->id }}"><i class="fas fa-edit"></i></a>
-
-                                                      <a href="{{ url('/admin/catalogo/delete') . '/' . $p->id }}"><i class="fas fa-trash-alt"></i></a>
-                                                </td>
+                                                <td>N/A</td>
+                                                <td>Nenhum Item Cadastrado</td>
+                                                <td>N/A</td>
                                           </tr>
-                                    @endforeach
+                                    }
                                 
                                     
                                     

@@ -63,6 +63,10 @@
 <script src="{{ asset('js/splidejs/splide.min.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('css/splidejs/splide.min.css') }}">
 
+{{--  font awesome styles  --}}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
+        integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+        
 </head>
 
 <body>

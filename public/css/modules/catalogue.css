@@ -3,47 +3,70 @@
     flex-direction: column;
     align-items: center;
 }
-.catalogue > h4 {
+.catalogue .header-title {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 15px black;
+    background-color: #333;
+    color: #fff;
+}
+.catalogue > .header-title h4 {
     margin-bottom: 0;
 }
-.catalogue > span {
+.catalogue > .header-title span {
     font-size: 0.8rem;
 }
-.catalogue > button.filter {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
 .catalogue .content {
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.catalogue .content .item {
-    width: 80%;
-}
-.catalogue .content .table {
-    text-align: center;
-    max-width: 500px;
-    width: 85vw;
-}
-.catalogue .content .table td a {
-    display: block;
+    flex-wrap: wrap;
+    align-items: flex-start;
     width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: unset;
+    margin-top: 2.5rem;
 }
-.catalogue form .container-items {
+.catalogue .content .filter {
+    width: 30%;
+    /* min-width: 350px; */
+}
+.catalogue .content .filter form {
+    width: 100%;
+}
+.catalogue .content .filter form .container-items {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: max-content;
     width: max-content;
+    margin: 0 auto;
+    box-shadow: 0 0 5px black;
+    border-radius: 15px;
+    padding: 15px;
 }
-.catalogue form .container-items > div {
+.catalogue .content .filter form .container-items > div {
     width: 100%;
 }
-.catalogue form .container-items > button[type="submit"] {
+.catalogue .content .filter form .container-items > button[type="submit"] {
     width: 100%;
+}
+
+.catalogue .content .result {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.catalogue .content .result.item {
+    width: 80%;
+}
+.catalogue .content .result.table {
+    text-align: center;
+    max-width: 500px;
+    width: 85vw;
+}
+.catalogue .content .result.table td a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: unset;
 }

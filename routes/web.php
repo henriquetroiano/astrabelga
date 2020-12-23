@@ -33,3 +33,13 @@ Auth::routes();
 Route::get('/home', function () {
     return redirect('/');
 });
+
+Route::get('/admin', function () {
+    return view('site.admin.index');
+})->middleware('checkadmin')->name('AdminHome');
+
+Route::get('/admin/catalogos', ['App\Http\Controllers\AdminCatalogosController', 'index'])->middleware('checkadmin')->name('AdminCatalogos');
+
+Route::post('/admin/catalogos/new', ['App\Http\Controllers\CatalogoController', 'store'])->middleware('checkadmin');
+
+Route::get('/admin/catalogo/delete/{id}', ['App\Http\Controllers\CatalogoController', 'destroy'])->middleware('checkadmin');

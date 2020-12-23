@@ -25,7 +25,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                    if($produtos) {
+                                    @if ($produtos)
                                           @foreach ($produtos as $p)
                                                 <tr>
                                                       <th scope="row" class="id">{{ $p->id }}</th>
@@ -34,18 +34,18 @@
                                                       </td>
                                                       <td class="actions">
                                                             <a href="{{ url('/admin/catalogo/edit') . '/' . $p->id }}"><i class="fas fa-edit"></i></a>
-      
+
                                                             <a href="{{ url('/admin/catalogo/delete') . '/' . $p->id }}"><i class="fas fa-trash-alt"></i></a>
                                                       </td>
                                                 </tr>
                                           @endforeach
-                                    } else {
+                                    @else
                                           <tr>
                                                 <td>N/A</td>
                                                 <td>Nenhum Item Cadastrado</td>
                                                 <td>N/A</td>
                                           </tr>
-                                    }
+                                    @endif
                                 
                                     
                                     

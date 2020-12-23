@@ -87,3 +87,10 @@
 .container.admin .content .catalogos th.id {
     text-align: center;
 }
+
+@media screen and (orientation: portrait) {
+    .container.admin {
+        flex-direction: column;
+        align-items: center;
+    }
+}

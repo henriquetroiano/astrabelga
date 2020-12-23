@@ -25,7 +25,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                    @if ($produtos)
+                                    @if (count($produtos) == 0)
                                           @foreach ($produtos as $p)
                                                 <tr>
                                                       <th scope="row" class="id">{{ $p->id }}</th>

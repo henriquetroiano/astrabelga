@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Catalogo;
+use App\Models\Marca;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 
@@ -40,12 +41,9 @@ class CatalogoController extends Controller
     {
         $data = $request->all();
 
-
         $table = new Catalogo;
         $table->name = $data['name'];
         $table->save();
-        
-       
         
         $files = $request->file('image');
 
@@ -57,8 +55,9 @@ class CatalogoController extends Controller
             $saveImage = $file->move(public_path("/uploads/"), $filename);
             $savePathToDB = '/uploads/' . $filename;
             
+            $picture->type = 1;
             $picture->url = $savePathToDB;
-            $picture->categoria_id = $table->id; 
+            $picture->catalogo_id = $table->id; 
 
             $picture->save();
         }
@@ -67,6 +66,79 @@ class CatalogoController extends Controller
 
         return redirect('/admin/catalogos');
     }
+
+    public function store_image(Request $request, $id)
+    {
+        $files = $request->file('image');
+
+        foreach ($files as $file) {
+
+            $picture = new Photo;
+
+            $filename = rand(0, 1000) . $file->getClientOriginalName();
+            $saveImage = $file->move(public_path("/uploads/"), $filename);
+            $savePathToDB = '/uploads/' . $filename;
+            
+            $picture->type = 1;
+            $picture->url = $savePathToDB;
+            $picture->catalogo_id = $id; 
+
+            $picture->save();
+        }
+
+        
+
+        return redirect('/admin/catalogo/edit/' . $id);
+    }
+
+    public function delete_image(Request $request, $id, $photo_id)
+    {
+        $file = Photo::find($photo_id);
+        // dd($file);
+        if ($file) {
+            $file->delete();
+            return redirect('/admin/catalogo/edit/' . $id);
+        }
+
+        
+    }
+
+    public function store_marca(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $table = new Marca;
+        $table->name = $data['name'];
+        $table->code = $data['code'];
+        $table->description = $data['description'];
+        $table->catalogo_id = $id;
+
+        $table->save();
+        
+        $files = $request->file('image');
+
+        foreach ($files as $file) {
+
+            $picture = new Photo;
+
+            $filename = rand(0, 1000) . $file->getClientOriginalName();
+            $saveImage = $file->move(public_path("/uploads/"), $filename);
+            $savePathToDB = '/uploads/' . $filename;
+            
+            $picture->type = 2;
+            $picture->url = $savePathToDB;
+            $picture->marca_id = $table->id; 
+
+            $picture->save();
+        }
+
+        
+
+        return redirect('/admin/catalogo/edit/' . $id);
+    }
+
+
+    
 
     /**
      * Display the specified resource.
@@ -87,7 +159,10 @@ class CatalogoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Catalogo::find($id);
+        // dd($item->marcas);
+        // echo $item;
+        return view('site.admin.catalogos-edit', compact('item'));
     }
 
     /**
@@ -100,6 +175,14 @@ class CatalogoController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function edit_name_catalogo(Request $request, $id)
+    {
+        $item = Catalogo::find($id);
+        $item->name = $request['name'];
+        $item->save();
+        return redirect('/admin/catalogo/edit/' . $id);
     }
 
     /**

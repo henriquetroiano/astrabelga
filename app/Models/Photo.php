@@ -16,6 +16,7 @@ class Photo extends Model
 
    protected $fillable = [
        'url',
+       'type',
    ];
 
    public function catalogo() 

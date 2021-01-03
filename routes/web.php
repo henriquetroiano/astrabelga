@@ -43,3 +43,15 @@ Route::get('/admin/catalogos', ['App\Http\Controllers\CatalogoController', 'inde
 Route::post('/admin/catalogos/new', ['App\Http\Controllers\CatalogoController', 'store'])->middleware('checkadmin');
 
 Route::get('/admin/catalogo/delete/{id}', ['App\Http\Controllers\CatalogoController', 'destroy'])->middleware('checkadmin');
+
+Route::get('/admin/catalogo/edit/{id}', ['App\Http\Controllers\CatalogoController', 'edit'])->middleware('checkadmin');
+
+Route::post('/admin/catalogo/{id}/name/edit', ['App\Http\Controllers\CatalogoController', 'edit_name_catalogo'])->middleware('checkadmin');
+
+Route::post('/admin/catalogo/{id}/image/new', ['App\Http\Controllers\CatalogoController', 'store_image'])->middleware('checkadmin');
+
+Route::post('/admin/catalogo/{id}/{photo_id}/image/delete', ['App\Http\Controllers\CatalogoController', 'delete_image'])->middleware('checkadmin');
+
+Route::post('/admin/catalogo/{id}/marca/new', ['App\Http\Controllers\CatalogoController', 'store_marca'])->middleware('checkadmin');
+
+

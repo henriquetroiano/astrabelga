@@ -42,8 +42,9 @@
                                                       <td class="actions">
                                                             <a href="{{ url('/admin/catalogo/edit') . '/' . $p->id }}"><i class="fas fa-edit"></i></a>
 
-                                                            <a href="{{ url('/admin/catalogo/delete') . '/' . $p->id }}"><i class="fas fa-trash-alt"></i></a>
+                                                            <a class="delete" href="{{ url('/admin/catalogo/delete') . '/' . $p->id }}"><i class="fas fa-trash-alt"></i></a>
                                                       </td>
+                                                      
                                                 </tr>
                                           @endforeach
                                     @else

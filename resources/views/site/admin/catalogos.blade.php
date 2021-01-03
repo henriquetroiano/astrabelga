@@ -28,6 +28,12 @@
                                     @if (count($produtos) >= 0)
                                     
                                           @foreach ($produtos as $p)
+
+                                                {{-- @foreach ($p->photos as $pf)
+                                                      {{$pf->url}}
+                                                    
+                                                @endforeach --}}
+
                                                 <tr>
                                                       <th scope="row" class="id">{{ $p->id }}</th>
                                                       <td>
@@ -74,7 +80,7 @@
       </div>
       <div class="modal-body">
 
-            <form action="{{ url('/admin/catalogos/new') }}" method="POST" id="form-catalogo">
+            <form action="{{ url('/admin/catalogos/new') }}" method="POST" id="form-catalogo" enctype="multipart/form-data">
                   @csrf
                   <div class="container-items">
                         <div class="form-group">
@@ -82,12 +88,8 @@
                               <input type="text" class="form-control" id="name" placeholder="Insira um nome para a peça" name="name">
                         </div>
                         <div class="form-group">
-                              <label for="code">Código</label>
-                              <input type="text" class="form-control" id="code" placeholder="Código" name="code">
-                        </div>
-                        <div class="form-group">
                               <label for="image">Fotos</label>
-                              <input type="text" class="form-control" id="image" placeholder="Insira Fotos do seu Produto" name="image">
+                              <input type="file" multiple accept="image/*" class="form-control" id="image" placeholder="Insira Fotos do seu Produto" name="image[]">
                         </div>
 
                         

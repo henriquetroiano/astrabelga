@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Catalogo;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class CatalogoController extends Controller
@@ -15,7 +16,8 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        //
+        $produtos = Catalogo::all();
+        return view('site.admin.catalogos', compact('produtos'));
     }
 
     /**
@@ -37,10 +39,32 @@ class CatalogoController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+
         $table = new Catalogo;
         $table->name = $data['name'];
-        $table->code = $data['code'];
         $table->save();
+        
+       
+        
+        $files = $request->file('image');
+
+        foreach ($files as $file) {
+
+            $picture = new Photo;
+
+            $filename = rand(0, 1000) . $file->getClientOriginalName();
+            $saveImage = $file->move(public_path("/uploads/"), $filename);
+            $savePathToDB = '/uploads/' . $filename;
+            
+            $picture->url = $savePathToDB;
+            $picture->categoria_id = $table->id; 
+
+            $picture->save();
+        }
+
+        
+
         return redirect('/admin/catalogos');
     }
 

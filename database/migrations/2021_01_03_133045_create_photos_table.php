@@ -14,8 +14,10 @@ class CreatePhotosTable extends Migration
     public function up()
     {
         Schema::create('photos', function (Blueprint $table) {
-            $table->unsignedBigInteger('photo_id')->foreign('photo_id')->references('id')->on('catalogos');
+            $table->increments('id');
             $table->string('url');
+            $table->integer('categoria_id')->unsigned()->nullable();
+            $table->foreign('categoria_id')->references('id')->on('catalogos');
             $table->timestamps();
         });
     }
@@ -30,5 +32,5 @@ class CreatePhotosTable extends Migration
         Schema::dropIfExists('photos');
     }
 
-    
+
 }

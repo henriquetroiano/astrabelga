@@ -38,7 +38,7 @@ Route::get('/admin', function () {
     return view('site.admin.index');
 })->middleware('checkadmin')->name('AdminHome');
 
-Route::get('/admin/catalogos', ['App\Http\Controllers\AdminCatalogosController', 'index'])->middleware('checkadmin')->name('AdminCatalogos');
+Route::get('/admin/catalogos', ['App\Http\Controllers\CatalogoController', 'index'])->middleware('checkadmin')->name('AdminCatalogos');
 
 Route::post('/admin/catalogos/new', ['App\Http\Controllers\CatalogoController', 'store'])->middleware('checkadmin');
 

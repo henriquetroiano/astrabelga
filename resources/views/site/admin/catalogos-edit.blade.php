@@ -130,30 +130,72 @@
 							<div class="subitem">
 								@if ($item->marcas)
 									@foreach ($item->marcas as $marca)
-										<p>{{$marca->name}}</p>
-										<form class="editName" action="{{ url('/admin/catalogo/edit/' . $item['id'] . '/marca-id/' . $marca->id . '/update') }}"
-											method="POST">
-											<input class="hide-self" type="text" name="name" value="{{$marca->name}}">
-                                    		<button class="edit"><i class="fas fa-edit"></i></button>
-											<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
-										</form>
-										<form action="/birita">
-											<button type="submit"><i class="fas fa-trash-alt"></i></button>
-										</form>
-										<script>
-											const btnStartEditMarca = document.querySelector('.marcas .editName button.edit');
-											const inputNameMarca = document.querySelector('.marcas .editName input');
-											const nameTextMarca = document.querySelector('.marcas .subitem p');
-											const btnSubmitMarca = document.querySelector('.marcas .editName button[type="submit"]');
-		
-											btnStartEditMarca.addEventListener('click', function(event) {
-												event.preventDefault();
-												inputNameMarca.classList.remove('hide-self');
-												btnStartEditMarca.classList.add('hide-self');
-												nameTextMarca.classList.add('hide-self');
-												btnSubmitMarca.classList.remove('hide-self');
-											})
-										</script>
+										<div class="container-item-{{$item['id']}}">
+											<div class="item">
+												<p>{{$marca->name}}</p>
+												<form class="editName" action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/edit') }}"
+													method="POST">
+													@csrf
+													<input class="hide-self target" type="text" name="name" value="{{$marca->name}}">
+													<button class="edit"><i class="fas fa-edit"></i></button>
+													<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
+												</form>
+												<form action="/birita">
+													@csrf
+													<button type="submit"><i class="fas fa-trash-alt"></i></button>
+												</form>
+												<script>
+													const btnStartEditMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .editName button.edit');
+													const inputNameMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .editName input.target');
+													const nameTextMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .item > p');
+													const btnSubmitMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .editName button[type="submit"]');
+				
+													btnStartEditMarca.addEventListener('click', function(event) {
+														event.preventDefault();
+														inputNameMarca.classList.remove('hide-self');
+														btnStartEditMarca.classList.add('hide-self');
+														nameTextMarca.classList.add('hide-self');
+														btnSubmitMarca.classList.remove('hide-self');
+													})
+												</script>
+											</div>
+											<div class="item item-{{$item->id}}">
+												<p>{{ $marca->code }}</p>
+												<form class="editName" action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/edit') }}"
+													method="POST">
+													@csrf
+													<input class="hide-self target" type="text" name="code" value="{{$marca->code}}">
+													<button class="edit"><i class="fas fa-edit"></i></button>
+													<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
+												</form>
+												<script>
+													const btnStartEditMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} .editName button.edit');
+													const inputNameMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} .editName input.target');
+													const nameTextMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} > p');
+													const btnSubmitMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} .editName button[type="submit"]');
+				
+													btnStartEditMarca{{$marca->id}}.addEventListener('click', function(event) {
+														event.preventDefault();
+														inputNameMarca{{$marca->id}}.classList.remove('hide-self');
+														btnStartEditMarca{{$marca->id}}.classList.add('hide-self');
+														nameTextMarca{{$marca->id}}.classList.add('hide-self');
+														btnSubmitMarca{{$marca->id}}.classList.remove('hide-self');
+													})
+												</script>
+											</div>
+											<div class="item fotos item-{{$item->id}}-fotos">
+												@foreach ($item->photos as $photo)
+													<div class="foto" style='background-image: url("{{$photo->url}}")'>
+														<form action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/marca_photo/' . $photo->id ) }}">
+															@csrf
+															<button type="submit"><i class="fas fa-trash-alt"></i></button>
+														</form>
+													</div>
+													
+												@endforeach
+											</div>
+										</div>
+
 									@endforeach								
 								@else
 										<h4>Ainda não há nenhuma marca cadastrada</h4>

@@ -54,4 +54,8 @@ Route::post('/admin/catalogo/{id}/{photo_id}/image/delete', ['App\Http\Controlle
 
 Route::post('/admin/catalogo/{id}/marca/new', ['App\Http\Controllers\CatalogoController', 'store_marca'])->middleware('checkadmin');
 
+Route::post('/admin/catalogo/{catId}/{marcaId}/edit', ['App\Http\Controllers\CatalogoController', 'edit_marca'])->middleware('checkadmin');
+
+Route::post('/admin/catalogo/{catId}/{marcaId}/marca_photo/{photoId}', ['App\Http\Controllers\CatalogoController', 'delete_photo_marca'])->middleware('checkadmin');
+
 

@@ -137,6 +137,36 @@ class CatalogoController extends Controller
         return redirect('/admin/catalogo/edit/' . $id);
     }
 
+    public function edit_marca(Request $request, $catId, $marcaId)
+    {
+
+        $target = Marca::find($marcaId);
+        if(isset($request->name)) {
+            $target->name = $request->name;
+        }
+        if(isset($request->code)) {
+            $target->code = $request->code;
+        }
+        $target->save();
+
+        return redirect('/admin/catalogo/edit/' . $catId);
+    }
+
+    public function delete_photo_marca(Request $request, $catId, $marcaId, $photoId)
+    {
+
+        $target = Marca::find($marcaId);
+        if(isset($request->name)) {
+            $target->name = $request->name;
+        }
+        if(isset($request->code)) {
+            $target->code = $request->code;
+        }
+        $target->save();
+
+        return redirect('/admin/catalogo/edit/' . $catId);
+    }
+
 
     
 

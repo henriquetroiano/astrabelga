@@ -25,7 +25,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                    @if (count($produtos) >= 0)
+                                    @if (count($produtos) > 0)
                                     
                                           @foreach ($produtos as $p)
 

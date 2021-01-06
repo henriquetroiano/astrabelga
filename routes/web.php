@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('site.home');
 })->name('home');
-Route::get('/catalogos', function () {
-    return view('site.catalogos');
-})->name('catalogos');
+
+Route::get('/catalogos', ['App\Http\Controllers\ClientController', 'catalogos'])->name('catalogos');
+
+Route::get('/catalogo/{id}', ['App\Http\Controllers\ClientController', 'catalogos_view'])->name('catalogos');
+
 Route::get('/catalogo/20', function () {
     return view('site.product');
 })->name('produtos');
@@ -57,5 +59,8 @@ Route::post('/admin/catalogo/{id}/marca/new', ['App\Http\Controllers\CatalogoCon
 Route::post('/admin/catalogo/{catId}/{marcaId}/edit', ['App\Http\Controllers\CatalogoController', 'edit_marca'])->middleware('checkadmin');
 
 Route::post('/admin/catalogo/{catId}/{marcaId}/marca_photo/{photoId}', ['App\Http\Controllers\CatalogoController', 'delete_photo_marca'])->middleware('checkadmin');
+
+Route::post('/admin/catalogo/{catId}/{marcaId}/foto/add', ['App\Http\Controllers\CatalogoController', 'edit_photo_marca'])->middleware('checkadmin');
+
 
 

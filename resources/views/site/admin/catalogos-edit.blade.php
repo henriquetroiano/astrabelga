@@ -130,9 +130,9 @@
 							<div class="subitem">
 								@if ($item->marcas)
 									@foreach ($item->marcas as $marca)
-										<div class="container-item-{{$item['id']}}">
-											<div class="item">
-												<p>{{$marca->name}}</p>
+										<div class="container-item-{{$marca['id']}} submarca card">
+											<div class="item card-header title">
+												<span style="margin-right: 5px">Nome da Marca: </span><p>{{$marca->name}}</p>
 												<form class="editName" action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/edit') }}"
 													method="POST">
 													@csrf
@@ -140,27 +140,27 @@
 													<button class="edit"><i class="fas fa-edit"></i></button>
 													<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
 												</form>
-												<form action="/birita">
+												<form class="deleteMarca" action="/birita">
 													@csrf
 													<button type="submit"><i class="fas fa-trash-alt"></i></button>
 												</form>
 												<script>
-													const btnStartEditMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .editName button.edit');
-													const inputNameMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .editName input.target');
-													const nameTextMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .item > p');
-													const btnSubmitMarca = document.querySelector('.marcas-item .container-item-{{$item["id"]}} .editName button[type="submit"]');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_title_btnStartEditMarca = document.querySelector('.marcas-item .container-item-{{$marca["id"]}} .title .editName button.edit');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_title_inputNameMarca = document.querySelector('.marcas-item .container-item-{{$marca["id"]}} .title .editName input.target');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_title_nameTextMarca = document.querySelector('.marcas-item .container-item-{{$marca["id"]}} .title > p');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_title_btnSubmitMarca = document.querySelector('.marcas-item .container-item-{{$marca["id"]}} .title .editName button[type="submit"]');
 				
-													btnStartEditMarca.addEventListener('click', function(event) {
+													loop_{{$loop->index}}_id_{{$marca->id}}_title_btnStartEditMarca.addEventListener('click', function(event) {
 														event.preventDefault();
-														inputNameMarca.classList.remove('hide-self');
-														btnStartEditMarca.classList.add('hide-self');
-														nameTextMarca.classList.add('hide-self');
-														btnSubmitMarca.classList.remove('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_title_inputNameMarca.classList.remove('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_title_btnStartEditMarca.classList.add('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_title_nameTextMarca.classList.add('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_title_btnSubmitMarca.classList.remove('hide-self');
 													})
 												</script>
 											</div>
-											<div class="item item-{{$item->id}}">
-												<p>{{ $marca->code }}</p>
+											<div class="item item-{{$marca->id}} card-header code ">
+												<span style="margin-right: 5px">Código: </span><p>{{ $marca->code }}</p>
 												<form class="editName" action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/edit') }}"
 													method="POST">
 													@csrf
@@ -169,24 +169,65 @@
 													<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
 												</form>
 												<script>
-													const btnStartEditMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} .editName button.edit');
-													const inputNameMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} .editName input.target');
-													const nameTextMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} > p');
-													const btnSubmitMarca{{$marca->id}} = document.querySelector('.item.item-{{$item->id}} .editName button[type="submit"]');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_code_btnStartEditMarca = document.querySelector('.item.item-{{$marca->id}}.code .editName button.edit');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_code_inputNameMarca = document.querySelector('.item.item-{{$marca->id}}.code .editName input.target');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_code_nameTextMarca = document.querySelector('.item.item-{{$marca->id}}.code > p');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_code_btnSubmitMarca = document.querySelector('.item.item-{{$marca->id}}.code .editName button[type="submit"]');
 				
-													btnStartEditMarca{{$marca->id}}.addEventListener('click', function(event) {
+													loop_{{$loop->index}}_id_{{$marca->id}}_code_btnStartEditMarca.addEventListener('click', function(event) {
 														event.preventDefault();
-														inputNameMarca{{$marca->id}}.classList.remove('hide-self');
-														btnStartEditMarca{{$marca->id}}.classList.add('hide-self');
-														nameTextMarca{{$marca->id}}.classList.add('hide-self');
-														btnSubmitMarca{{$marca->id}}.classList.remove('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_code_inputNameMarca.classList.remove('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_code_btnStartEditMarca.classList.add('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_code_nameTextMarca.classList.add('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_code_btnSubmitMarca.classList.remove('hide-self');
 													})
 												</script>
 											</div>
-											<div class="item fotos item-{{$item->id}}-fotos">
-												@foreach ($item->photos as $photo)
+
+											
+											<div class="item item-{{$marca->id}} card-header " data-toggle="collapse" href="#collapseExample{{$marca->id}}" role="button" aria-expanded="false" aria-controls="collapseExample{{$marca->id}}">Adicionar Fotos <i style="color: green; margin-left: 5px" class="fas fa-plus"></i></div>
+											
+											<div class="collapse" id="collapseExample{{$marca->id}}" style="width: 100%">
+												<div class="card m-3">
+													<form action="{{ url('/admin/catalogo/'. $item->id . '/' . $marca->id . '/foto/add') }}" method="POST" enctype="multipart/form-data">
+														@csrf
+														<div class="form-group">
+															<label for="image" class="card-header" style="width: 100%">Selecione uma imagem</label>
+															<input type="file" class="form-control p-1" name="image[]" id="image" accept="image/*" multiple>
+														</div>
+														<button type="submit" class="btn btn-success ml-2 mb-2">Enviar</button>
+													</form>
+												</div>
+											  </div>
+
+											<div class="item item-{{$marca->id}} card-header description ">
+												<span style="margin-right: 5px">Descrição: </span><p> {{ $marca->description }}</p>
+												<form class="editName" action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/edit') }}"
+													method="POST">
+													@csrf
+													<input class="hide-self target" type="text" name="description" value="{{$marca->description}}">
+													<button class="edit"><i class="fas fa-edit"></i></button>
+													<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
+												</form>
+												<script>
+													const loop_{{$loop->index}}_id_{{$marca->id}}_description_btnStartEditMarca = document.querySelector('.item.item-{{$marca->id}}.description .editName button.edit');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_description_inputNameMarca = document.querySelector('.item.item-{{$marca->id}}.description .editName input.target');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_description_nameTextMarca = document.querySelector('.item.item-{{$marca->id}}.description > p');
+													const loop_{{$loop->index}}_id_{{$marca->id}}_description_btnSubmitMarca = document.querySelector('.item.item-{{$marca->id}}.description .editName button[type="submit"]');
+				
+													loop_{{$loop->index}}_id_{{$marca->id}}_description_btnStartEditMarca.addEventListener('click', function(event) {
+														event.preventDefault();
+														loop_{{$loop->index}}_id_{{$marca->id}}_description_inputNameMarca.classList.remove('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_description_btnStartEditMarca.classList.add('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_description_nameTextMarca.classList.add('hide-self');
+														loop_{{$loop->index}}_id_{{$marca->id}}_description_btnSubmitMarca.classList.remove('hide-self');
+													})
+												</script>
+											</div>
+											<div class="item fotos item-{{$marca->id}}-fotos card-body">
+												@foreach ($marca->photos as $photo)
 													<div class="foto" style='background-image: url("{{$photo->url}}")'>
-														<form action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/marca_photo/' . $photo->id ) }}">
+														<form method="POST" action="{{ url('/admin/catalogo/' . $item['id'] . '/' . $marca->id . '/marca_photo/' . $photo->id ) }}">
 															@csrf
 															<button type="submit"><i class="fas fa-trash-alt"></i></button>
 														</form>

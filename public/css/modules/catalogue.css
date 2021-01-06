@@ -70,3 +70,31 @@
     text-decoration: none;
     color: unset;
 }
+
+.catalogue-view .fotos {
+    /* height: 250px; */
+    width: 100%;
+}
+
+.catalogue-view .fotos .foto {
+    display: block;
+    width: 320px;
+    height: 320px;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+} 
+
+.catalogue-view .marcas {
+    width: 100%;
+}
+.catalogue-view .marcas .marca .foto-marca {
+    display: block;
+    width: 175px;
+    height: 175px;
+    background-size: 100% auto;
+    background-position: center;
+    margin: auto;
+}
+

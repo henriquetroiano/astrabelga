@@ -147,7 +147,37 @@ class CatalogoController extends Controller
         if(isset($request->code)) {
             $target->code = $request->code;
         }
+        if(isset($request->description)) {
+            $target->description = $request->description;
+        }
         $target->save();
+
+        return redirect('/admin/catalogo/edit/' . $catId);
+    }
+
+    public function edit_photo_marca(Request $request, $catId, $marcaId)
+    {
+
+        $files = $request->file('image');
+
+        // dd($files); 
+
+        foreach ($files as $file) {
+
+            $picture = new Photo;
+
+            $filename = rand(0, 1000) . $file->getClientOriginalName();
+            $saveImage = $file->move(public_path("/uploads/"), $filename);
+            $savePathToDB = '/uploads/' . $filename;
+            
+            $picture->type = 2;
+            $picture->url = $savePathToDB;
+            $picture->marca_id = $marcaId; 
+
+            $picture->save();
+        }
+
+        
 
         return redirect('/admin/catalogo/edit/' . $catId);
     }
@@ -155,14 +185,12 @@ class CatalogoController extends Controller
     public function delete_photo_marca(Request $request, $catId, $marcaId, $photoId)
     {
 
-        $target = Marca::find($marcaId);
-        if(isset($request->name)) {
-            $target->name = $request->name;
+        $target = Photo::find($photoId);
+        // dd($target);
+
+        if(isset($target)) {
+            $target->delete();
         }
-        if(isset($request->code)) {
-            $target->code = $request->code;
-        }
-        $target->save();
 
         return redirect('/admin/catalogo/edit/' . $catId);
     }

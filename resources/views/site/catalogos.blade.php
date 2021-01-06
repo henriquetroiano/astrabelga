@@ -58,22 +58,13 @@
 					  </tr>
 					</thead>
 					<tbody>
-					  <tr>
-						<th scope="row">1</th>
-						<td><a href="{{ url('/catalogo/20') }}">Farol - Dianteiro Esquerdo</a></td>
-					  </tr>
-					  <tr>
-						<th scope="row">2</th>
-						<td><a href="{{ url('/catalogo/20') }}">Farol - Dianteiro Direito</a></td>
-					  </tr>
-					  <tr>
-						<th scope="row">3</th>
-						<td><a href="{{ url('/catalogo/20') }}">Farol de milha - Dianteiro Direito</a></td>
-					  </tr>
-					  <tr>
-						<th scope="row">4</th>
-						<td><a href="{{ url('/catalogo/20') }}">Farol de milha - Dianteiro Esquerdo</a></td>
-					  </tr>
+						@foreach ($catalogos as $peca)
+							<tr>
+								<th scope="row">{{$peca->id}}</th>
+								<td><a href="{{ url('/catalogo' . '/'. $peca->id) }}">{{$peca->name}}</a></td>
+							</tr>
+						@endforeach
+					  
 					</tbody>
 				  </table>
 	

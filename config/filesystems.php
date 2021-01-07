@@ -52,6 +52,11 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'project_root' => [
+            'driver' => 'local',
+            'root' => base_path(),
+        ],
+
     ],
 
     /*

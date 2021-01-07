@@ -7,6 +7,8 @@ use App\Models\Catalogo;
 use App\Models\Marca;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use File;
 
 class CatalogoController extends Controller
 {
@@ -17,6 +19,7 @@ class CatalogoController extends Controller
      */
     public function index()
     {
+
         $produtos = Catalogo::all();
         return view('site.admin.catalogos', compact('produtos'));
     }
@@ -251,10 +254,53 @@ class CatalogoController extends Controller
      */
     public function destroy($id)
     {
+        // array_map('unlink, $files');
+        $item = Catalogo::find($id);
+
+        // delete from the system the 'catalogos' pictures
+        $array_photos_catalogo = [];
+        // add to array the files able to delete
+        if($item->photos) {
+            foreach ($item->photos as $photo => $p) {
+                array_push($array_photos_catalogo, '.' . $p->url);
+            }
+        }
+        // loop thru the array of files and check one by one and delete it if true
+        foreach ($array_photos_catalogo as $k => $v) {
+            if(file_exists($v)) {
+                // array_map('unlink', $v);
+                unlink($v);
+            } 
+        }
+
+        // delete from the system the 'marcas' pictures, a dependency of catalogos
+        $array_photos_marca = [];
+        // add to array the files able to delete
+        if($item->marcas) {
+            foreach ($item->marcas as $marca => $m) {
+                foreach ($m->photos as $p) {
+                    array_push($array_photos_marca, '.' . $p->url);
+                }
+            }
+        }
+        // loop thru the array of files and check one by one and delete it if true
+        foreach ($array_photos_marca as $k => $v) {
+            if(file_exists($v)) {
+                // array_map('unlink', $v);
+                unlink($v);
+            } 
+        }
+
         $item = Catalogo::find($id);
         if ($item) {
+            foreach($item->marcas as $marca) {
+                if($marca) {
+                    Marca::find($marca->id)->delete();
+                }
+            }
             $item->delete();
             return redirect('/admin/catalogos');
         }
+
     }
 }

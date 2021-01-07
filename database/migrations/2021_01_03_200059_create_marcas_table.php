@@ -20,6 +20,7 @@ class CreateMarcasTable extends Migration
             $table->longText('description');
             $table->integer('catalogo_id')->unsigned()->nullable()->foreign('catalogo_id')->references('id')->on('catalogos');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

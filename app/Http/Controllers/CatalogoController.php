@@ -293,8 +293,18 @@ class CatalogoController extends Controller
 
         $item = Catalogo::find($id);
         if ($item) {
+            if($item->photos) {
+                foreach($item->photos as $photo) {
+                    Photo::find($photo->id)->delete();
+                }
+            }
             foreach($item->marcas as $marca) {
                 if($marca) {
+                    if($marca->photos) {
+                        foreach ($marca->photos as $photo) {
+                            Photo::find($photo->id)->delete();
+                        }
+                    }
                     Marca::find($marca->id)->delete();
                 }
             }

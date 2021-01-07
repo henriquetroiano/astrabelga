@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Marca extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     public function photos()
     {
@@ -19,4 +20,6 @@ class Marca extends Model
         'code',
         'description',
     ];
+    
+    protected $dates = ['deleted_at'];
 }

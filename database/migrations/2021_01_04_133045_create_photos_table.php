@@ -21,6 +21,7 @@ class CreatePhotosTable extends Migration
             $table->integer('catalogo_id')->unsigned()->nullable()->foreign('catalogo_id')->references('id')->on('catalogos');
             $table->integer('marca_id')->unsigned()->nullable()->foreign('marca_id')->references('id')->on('marcas');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

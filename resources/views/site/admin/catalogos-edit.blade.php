@@ -140,7 +140,7 @@
 													<button class="edit"><i class="fas fa-edit"></i></button>
 													<button class="hide-self" type="submit"><i class="fas fa-check"></i></button>
 												</form>
-												<form class="deleteMarca" action="/birita">
+												<form class="deleteMarca" action="/admin/catalogo/{{$item->id}}/{{$marca->id}}/delete" method="POST">
 													@csrf
 													<button type="submit"><i class="fas fa-trash-alt"></i></button>
 												</form>

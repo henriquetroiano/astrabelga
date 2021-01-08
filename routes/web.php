@@ -20,14 +20,29 @@ Route::get('/', function () {
 
 Route::get('/catalogos', ['App\Http\Controllers\ClientController', 'catalogos'])->name('catalogos');
 
-Route::get('/catalogo/{id}', ['App\Http\Controllers\ClientController', 'catalogos_view'])->name('catalogos');
+Route::get('/catalogo/{id}', ['App\Http\Controllers\ClientController', 'catalogos_view'])->name('catalogos_view');
 
 Route::get('/catalogo/20', function () {
     return view('site.product');
 })->name('produtos');
+
 Route::get('/account', function () {
     return view('site.my_account');
 })->name('account');
+
+Route::get('/documentos', function () {
+    return view('site.documentos');
+})->name('documentos');
+
+Route::get('/videos', function () {
+    return view('site.videos');
+})->name('videos');
+
+Route::get('/fichas-tecnica', function () {
+    return view('site.fichas-tecnica');
+})->name('fichas-tecnica');
+
+
 
 Auth::routes(['verify' => true]);
 
@@ -58,9 +73,13 @@ Route::post('/admin/catalogo/{id}/marca/new', ['App\Http\Controllers\CatalogoCon
 
 Route::post('/admin/catalogo/{catId}/{marcaId}/edit', ['App\Http\Controllers\CatalogoController', 'edit_marca'])->middleware('checkadmin');
 
+Route::post('/admin/catalogo/{catId}/{marcaId}/delete', ['App\Http\Controllers\CatalogoController', 'delete_marca'])->middleware('checkadmin');
+
 Route::post('/admin/catalogo/{catId}/{marcaId}/marca_photo/{photoId}', ['App\Http\Controllers\CatalogoController', 'delete_photo_marca'])->middleware('checkadmin');
 
 Route::post('/admin/catalogo/{catId}/{marcaId}/foto/add', ['App\Http\Controllers\CatalogoController', 'edit_photo_marca'])->middleware('checkadmin');
+
+Route::get('/admin/documentos', ['App\Http\Controllers\DocumentosController', 'index'])->middleware('checkadmin')->name('documentos_admin');
 
 
 

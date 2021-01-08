@@ -15,14 +15,17 @@
           <a class="nav-link" href="{{ url('/catalogos') }}">Catálogos de Peças</a>
         </li>
         <li class="nav-item dropdown @if(Route::currentRouteName() == 'esquemas' || Route::currentRouteName() == 'manuais') active @endif">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Manutenção
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ url('/manuais/esquemas-eletricos') }}">Esquemas Elétricos</a>
-              <a class="dropdown-item" href="{{ url('/manuais/manutencao') }}">Manuais de Manutenção</a>
-            </div>
-          </li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Manutenção
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url('/documentos') }}">Documentos e Manuais</a>
+            <a class="dropdown-item" href="{{ url('/videos') }}">Vídeos</a>
+          </div>
+        </li>
+        <li class="nav-item @if(Route::currentRouteName() == 'fichas-tecnicas') active @endif">
+          <a class="nav-link" href="{{ url('/fichas-tecnicas') }}">Fichas Técnicas</a>
+        </li>
         <li class="nav-item @if(Route::currentRouteName() == 'sobre') active @endif">
           <a class="nav-link" href="{{ url('/sobre-nos') }}">Sobre Nós</a>
         </li>

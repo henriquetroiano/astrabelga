@@ -102,6 +102,11 @@ class CatalogoController extends Controller
     public function delete_image(Request $request, $id, $photo_id)
     {
         $file = Photo::find($photo_id);
+
+        if(file_exists('.' . $file->url)) {
+            // array_map('unlink', $v);
+            unlink('.' . $file->url);
+        } 
         // dd($file);
         if ($file) {
             $file->delete();
@@ -163,6 +168,26 @@ class CatalogoController extends Controller
         return redirect('/admin/catalogo/edit/' . $catId);
     }
 
+    public function delete_marca(Request $request, $catId, $marcaId)
+    {
+
+        $target = Marca::find($marcaId);
+        // DD($target);
+        if($target->photos) {
+            foreach ($target->photos as $f) {
+                if(file_exists('.' . $f->url)) {
+                    unlink('.' . $f->url);
+                }
+            }
+        }
+        // dd("ok");
+        $target->delete();
+
+        return redirect('/admin/catalogo/edit/' . $catId);
+    }
+
+
+
     public function edit_photo_marca(Request $request, $catId, $marcaId)
     {
 
@@ -195,6 +220,10 @@ class CatalogoController extends Controller
 
         $target = Photo::find($photoId);
         // dd($target);
+        if(file_exists('.' . $target->url)) {
+            // array_map('unlink', $v);
+            unlink('.' . $target->url);
+        } 
 
         if(isset($target)) {
             $target->delete();

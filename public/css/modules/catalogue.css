@@ -51,6 +51,7 @@
 
 .catalogue .content .result {
     width: 70%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,6 +71,22 @@
     text-decoration: none;
     color: unset;
 }
+.catalogue .filter .container-items {
+    display: flex;
+    flex-direction: column;
+}
+.catalogue .clickCatalogue {
+    color: #333 !important; text-decoration: none !important; display: block; width: 100%;
+}
+
+
+
+
+
+
+
+
+
 
 .catalogue-view .fotos {
     /* height: 250px; */
@@ -97,4 +114,6 @@
     background-position: center;
     margin: auto;
 }
+
+
 

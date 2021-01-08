@@ -10,14 +10,15 @@
         @component('components.ads.horizontal')@endcomponent
 		<div class="header-title">
 			<h4>Catálogo de Peças Compatíveis / Intercambiáveis</h4>
-			<span>Não recomendamos peças paralelas (sem marca). <strong>Evite</strong> o uso de tais peças.</span>
+			{{-- <span>Não recomendamos peças paralelas (sem marca). <strong>Evite</strong> o uso de tais peças.</span> --}}
 		</div>
-        
-		
-		<div class="content">
-
+		<div class="card mt-3">
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				Filtros +
+			  </button>		</div>
+		<div class="collapse" id="collapseExample">
 			<div class="filter">
-		
+			
 				<form action="{{ url('/filter-catalogue') }}" method="POST" id="form-catalogo">
 					<div class="container-items">
 					  <div class="my-1">
@@ -47,6 +48,10 @@
 					</div>
 				  </form>
 			</div>
+		</div>
+        
+		
+		<div class="content">
 			
 			<div class="result">
 				{{--  <h3>Resultados:</h3>  --}}
@@ -61,7 +66,7 @@
 						@foreach ($catalogos as $peca)
 							<tr>
 								<th scope="row">{{$peca->id}}</th>
-								<td><a href="{{ url('/catalogo' . '/'. $peca->id) }}">{{$peca->name}}</a></td>
+								<td><a class="clickCatalogue" href="{{ url('/catalogo' . '/'. $peca->id) }}">{{$peca->name}}</a></td>
 							</tr>
 						@endforeach
 					  

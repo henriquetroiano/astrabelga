@@ -17,7 +17,9 @@ class CreateDocumentosTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->string('url');
+            $table->string('file');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -20,7 +20,7 @@ class Documento extends Model
     protected $fillable = [
         'title',
         'description',
-        'url',
+        'file',
     ];
 
     protected $dates = ['deleted_at'];

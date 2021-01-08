@@ -81,5 +81,5 @@ Route::post('/admin/catalogo/{catId}/{marcaId}/foto/add', ['App\Http\Controllers
 
 Route::get('/admin/documentos', ['App\Http\Controllers\DocumentosController', 'index'])->middleware('checkadmin')->name('documentos_admin');
 
-
+Route::post('/admin/documentos/new', ['App\Http\Controllers\DocumentosController', 'admin_documentos_uploader'])->middleware('checkadmin')->name('admin_documentos_uploader');
 

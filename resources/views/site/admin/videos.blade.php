@@ -22,8 +22,8 @@
                             <input type="text" name="title" id="title" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label class="mb-0" for="url">Url</label>
-                            <input type="text" name="url" id="url" class="form-control">
+                            <label class="mb-0" for="iframe">iframe</label>
+                            <input type="text" name="iframe" id="iframe" class="form-control">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Salvar</button>
@@ -69,26 +69,26 @@
 							
 								</div>
 								<div class="card-body">
-									<div class="url">
-										<p>{{$video->url}}</p>
+									<div class="iframe">
+										<p>{{$video->iframe}}</p>
 										<button class="edit"><i class="fas fa-edit"></i></button>
 
 										<form class="hide-self" action="{{ route('admin_videos_edit') }}" method="POST">
 											@csrf
 											<input type="hidden" name="id" value="{{$video->id}}">
-											<input type="text" name="url" value="{{ $video->url }}">
+											<input type="text" name="iframe" value="{{ $video->iframe }}">
 											<button type="submit"><i class="fas fa-check"></i></button>
 										</form>
 
 										<script>
-											const from_video_id_{{$video->id}}_url_title = document.querySelector('.item-card.video_id_{{$video->id}} .url p');
-											const from_video_id_{{$video->id}}_url_edit = document.querySelector('.item-card.video_id_{{$video->id}} .url button.edit');
-											const from_video_id_{{$video->id}}_url_form = document.querySelector('.item-card.video_id_{{$video->id}} .url form');
+											const from_video_id_{{$video->id}}_iframe_title = document.querySelector('.item-card.video_id_{{$video->id}} .iframe p');
+											const from_video_id_{{$video->id}}_iframe_edit = document.querySelector('.item-card.video_id_{{$video->id}} .iframe button.edit');
+											const from_video_id_{{$video->id}}_iframe_form = document.querySelector('.item-card.video_id_{{$video->id}} .iframe form');
 	
-											from_video_id_{{$video->id}}_url_edit.addEventListener('click', function(e) {
-												from_video_id_{{$video->id}}_url_title.classList.add('hide-self');
-												from_video_id_{{$video->id}}_url_edit.classList.add('hide-self');
-												from_video_id_{{$video->id}}_url_form.classList.remove('hide-self');
+											from_video_id_{{$video->id}}_iframe_edit.addEventListener('click', function(e) {
+												from_video_id_{{$video->id}}_iframe_title.classList.add('hide-self');
+												from_video_id_{{$video->id}}_iframe_edit.classList.add('hide-self');
+												from_video_id_{{$video->id}}_iframe_form.classList.remove('hide-self');
 											})
 										</script>
 

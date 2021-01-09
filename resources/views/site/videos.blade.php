@@ -15,7 +15,7 @@
                     <div class="card my-3">
                         <h3 class="card-header">{{$video->title}}</h3>
                         <div class="card-body">
-                            <iframe width="560" height="315" src="{{$video->url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            {{$video->iframe}}
                         </div>
                     </div>
                 @endforeach

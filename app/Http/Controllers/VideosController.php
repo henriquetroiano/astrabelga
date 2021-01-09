@@ -15,7 +15,7 @@ class VideosController extends Controller
     public function admin_videos_uploader(Request $request) {
         $video = new Video;
         $video->title = $request->title;
-        $video->url = $request->url;
+        $video->iframe = $request->iframe;
         $video->save();
         
         return redirect()->route('videos_admin');
@@ -28,8 +28,8 @@ class VideosController extends Controller
             if(isset($request->title)) {
                 $video->title = $request->title;
             }
-            if(isset($request->url)) {
-                $video->url = $request->url;
+            if(isset($request->iframe)) {
+                $video->iframe = $request->iframe;
             }
             $video->save();
         }

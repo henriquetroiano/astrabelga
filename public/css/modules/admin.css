@@ -409,12 +409,12 @@
     color: red;
 }
 
-.content.videos .item-card .url {
+.content.videos .item-card .iframe {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.content.videos .item-card .url p {
+.content.videos .item-card .iframe p {
     margin-bottom: 0;
 }
 

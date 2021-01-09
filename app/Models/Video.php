@@ -13,7 +13,7 @@ class Video extends Model
 
     protected $fillable = [
         'title',
-        'url',
+        'irfame',
     ];
 
     protected $dates = ['deleted_at'];

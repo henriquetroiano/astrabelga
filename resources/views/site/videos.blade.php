@@ -15,7 +15,7 @@
                     <div class="card my-3">
                         <h3 class="card-header">{{$video->title}}</h3>
                         <div class="card-body">
-                            {{$video->iframe}}
+                            {!! $video->iframe !!}
                         </div>
                     </div>
                 @endforeach

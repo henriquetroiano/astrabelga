@@ -29,9 +29,9 @@
             <a class="dropdown-item" href="{{ url('/videos') }}">Vídeos</a>
           </div>
         </li> --}}
-        <li class="nav-item @if(Route::currentRouteName() == 'fichas-tecnicas') active @endif">
+        {{-- <li class="nav-item @if(Route::currentRouteName() == 'fichas-tecnicas') active @endif">
           <a class="nav-link" href="{{ url('/fichas-tecnicas') }}">Fichas Técnicas</a>
-        </li>
+        </li> --}}
         <li class="nav-item @if(Route::currentRouteName() == 'sobre') active @endif">
           <a class="nav-link" href="{{ url('/sobre-nos') }}">Sobre Nós</a>
         </li>

@@ -64,6 +64,7 @@ class DocumentosController extends Controller
             if(file_exists('.' . $documento->file)) {
                 unlink('.' . $documento->file);
             }
+            
             $file = $request->file;
             $filename = rand(0, 1000) . $file->getClientOriginalName();
             $file->move(public_path("/uploads/"), $filename);

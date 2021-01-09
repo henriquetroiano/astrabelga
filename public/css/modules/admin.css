@@ -373,6 +373,54 @@
 
 
 
+.content.videos .item-card .card-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content.videos .item-card .card-header .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content.videos .item-card h4 {
+    margin-bottom: 0;
+}
+
+.content.videos .item-card .hide-self {
+    display: none;
+}
+.content.videos .item-card button.edit {
+    color: green;
+    outline: none;
+    border: none;
+    background: none;
+}
+.content.videos .item-card form button {
+    color: green;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.content.videos .item-card form.delete button {
+    color: red;
+}
+
+.content.videos .item-card .url {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content.videos .item-card .url p {
+    margin-bottom: 0;
+}
+
+.content.videos .item-card .file input[type="file"]{
+    overflow: hidden;
+}
 
 
 

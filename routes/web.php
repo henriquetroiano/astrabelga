@@ -32,9 +32,7 @@ Route::get('/account', function () {
 
 Route::get('/documentos', ['App\Http\Controllers\ClientController', 'documentos'])->name('documentos');
 
-Route::get('/videos', function () {
-    return view('site.videos');
-})->name('videos');
+Route::get('/videos', ['App\Http\Controllers\ClientController', 'videos'])->name('videos');
 
 Route::get('/fichas-tecnica', function () {
     return view('site.fichas-tecnica');
@@ -84,4 +82,12 @@ Route::post('/admin/documentos/new', ['App\Http\Controllers\DocumentosController
 Route::post('/admin/documentos/delete', ['App\Http\Controllers\DocumentosController', 'admin_documentos_delete'])->middleware('checkadmin')->name('admin_documentos_delete');
 
 Route::post('/admin/documentos/edit', ['App\Http\Controllers\DocumentosController', 'admin_documentos_edit'])->middleware('checkadmin')->name('admin_documentos_edit');
+
+Route::get('/admin/videos', ['App\Http\Controllers\VideosController', 'admin_index'])->middleware('checkadmin')->name('videos_admin');
+
+Route::post('/admin/videos/new', ['App\Http\Controllers\VideosController', 'admin_videos_uploader'])->middleware('checkadmin')->name('admin_videos_uploader');
+
+Route::post('/admin/videos/edit', ['App\Http\Controllers\VideosController', 'admin_videos_edit'])->middleware('checkadmin')->name('admin_videos_edit');
+
+Route::post('/admin/videos/delete', ['App\Http\Controllers\VideosController', 'admin_videos_delete'])->middleware('checkadmin')->name('admin_videos_delete');
 

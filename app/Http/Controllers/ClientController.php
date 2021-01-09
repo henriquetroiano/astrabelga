@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Catalogo;
 use App\Models\Documento;
+use App\Models\Video;
 
 
 class ClientController extends Controller
@@ -24,5 +25,10 @@ class ClientController extends Controller
     public function documentos() {
         $documentos = Documento::orderBy('id', 'desc')->get();
         return view('site.documentos', compact('documentos'));
+    }
+
+    public function videos() {
+        $videos = Video::orderBy('id', 'desc')->get();
+        return view('site.videos', compact('videos'));
     }
 }

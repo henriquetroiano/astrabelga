@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Catalogo;
+use App\Models\Documento;
 
 
 class ClientController extends Controller
@@ -18,5 +19,10 @@ class ClientController extends Controller
         $peca = Catalogo::find($id);
 
         return view('site.catalogo_view', compact('peca'));
+    }
+
+    public function documentos() {
+        $documentos = Documento::orderBy('id', 'desc')->get();
+        return view('site.documentos', compact('documentos'));
     }
 }

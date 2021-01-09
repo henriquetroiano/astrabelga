@@ -14,7 +14,13 @@
         <li class="nav-item @if(Route::currentRouteName() == 'catalogos') active @endif">
           <a class="nav-link" href="{{ url('/catalogos') }}">Catálogos de Peças</a>
         </li>
-        <li class="nav-item dropdown @if(Route::currentRouteName() == 'esquemas' || Route::currentRouteName() == 'manuais') active @endif">
+        <li class="nav-item @if(Route::currentRouteName() == 'documentos') active @endif">
+          <a class="nav-link" href="{{ url('/documentos') }}">Documentos</a>
+        </li>
+        <li class="nav-item @if(Route::currentRouteName() == 'videos') active @endif">
+          <a class="nav-link" href="{{ url('/videos') }}">Vídeos</a>
+        </li>
+        {{-- <li class="nav-item dropdown @if(Route::currentRouteName() == 'esquemas' || Route::currentRouteName() == 'manuais') active @endif">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Manutenção
           </a>
@@ -22,7 +28,7 @@
             <a class="dropdown-item" href="{{ url('/documentos') }}">Documentos e Manuais</a>
             <a class="dropdown-item" href="{{ url('/videos') }}">Vídeos</a>
           </div>
-        </li>
+        </li> --}}
         <li class="nav-item @if(Route::currentRouteName() == 'fichas-tecnicas') active @endif">
           <a class="nav-link" href="{{ url('/fichas-tecnicas') }}">Fichas Técnicas</a>
         </li>

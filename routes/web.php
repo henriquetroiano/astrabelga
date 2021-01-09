@@ -30,9 +30,7 @@ Route::get('/account', function () {
     return view('site.my_account');
 })->name('account');
 
-Route::get('/documentos', function () {
-    return view('site.documentos');
-})->name('documentos');
+Route::get('/documentos', ['App\Http\Controllers\ClientController', 'documentos'])->name('documentos');
 
 Route::get('/videos', function () {
     return view('site.videos');
@@ -82,4 +80,8 @@ Route::post('/admin/catalogo/{catId}/{marcaId}/foto/add', ['App\Http\Controllers
 Route::get('/admin/documentos', ['App\Http\Controllers\DocumentosController', 'index'])->middleware('checkadmin')->name('documentos_admin');
 
 Route::post('/admin/documentos/new', ['App\Http\Controllers\DocumentosController', 'admin_documentos_uploader'])->middleware('checkadmin')->name('admin_documentos_uploader');
+
+Route::post('/admin/documentos/delete', ['App\Http\Controllers\DocumentosController', 'admin_documentos_delete'])->middleware('checkadmin')->name('admin_documentos_delete');
+
+Route::post('/admin/documentos/edit', ['App\Http\Controllers\DocumentosController', 'admin_documentos_edit'])->middleware('checkadmin')->name('admin_documentos_edit');
 

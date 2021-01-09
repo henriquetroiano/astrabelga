@@ -320,6 +320,55 @@
 }
 
 
+.content.documentos .item-card .card-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content.documentos .item-card .card-header .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content.documentos .item-card h4 {
+    margin-bottom: 0;
+}
+
+.content.documentos .item-card .hide-self {
+    display: none;
+}
+.content.documentos .item-card button.edit {
+    color: green;
+    outline: none;
+    border: none;
+    background: none;
+}
+.content.documentos .item-card form button {
+    color: green;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.content.documentos .item-card form.delete button {
+    color: red;
+}
+
+.content.documentos .item-card .description {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content.documentos .item-card .description p {
+    margin-bottom: 0;
+}
+
+.content.documentos .item-card .file input[type="file"]{
+    overflow: hidden;
+}
+
 
 
 

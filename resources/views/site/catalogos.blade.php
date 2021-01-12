@@ -7,11 +7,48 @@
 
     <div class="container catalogue pt-3">
 
+		@component('components.ads.horizontal')@endcomponent
+		<div class="card" style="width: 100%">
+			<div class="card-header">
+				<h4 class="mb-0">Catálogo de Peças Compatíveis / Intercambiáveis</h4>
+			</div>
+			<div class="card-body">
+				@if(count($catalogos) == 0)
+					<h4>Nenhuma Peça Cadastrada</h4>
+				@endif
+				@foreach ($catalogos as $peca)
+					<div class="card">
+						<div class="card-header"><h5 class="mb-0">{{$peca->name}}</h5> <a class="btn btn-success" href="{{ url('/catalogo' . '/'. $peca->id) }}">Ver Detalhes</a></div>
+					</div>
+				@endforeach
+			</div>
+		</div>
+		
+        
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- @section('content')
+
+
+    <div class="container catalogue pt-3">
+
         @component('components.ads.horizontal')@endcomponent
 		<div class="header-title">
 			<h4>Catálogo de Peças Compatíveis / Intercambiáveis</h4>
 			{{-- <span>Não recomendamos peças paralelas (sem marca). <strong>Evite</strong> o uso de tais peças.</span> --}}
-		</div>
+		{{-- </div>
 		<div class="card mt-3">
 				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 				Filtros +
@@ -53,9 +90,9 @@
 		
 		<div class="content">
 			
-			<div class="result">
+			<div class="result"> --}}
 				{{--  <h3>Resultados:</h3>  --}}
-				<table class="table table-bordered table-hover">
+				{{-- <table class="table table-bordered table-hover">
 					<thead class="thead-dark">
 					  <tr>
 						<th style="width: 13%" scope="col">ID</th>
@@ -77,4 +114,4 @@
 		</div>
         
     </div>
-@endsection
+@endsection --}}

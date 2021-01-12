@@ -18,7 +18,7 @@
 				@endif
 				@foreach ($catalogos as $peca)
 					<div class="card">
-						<h2 class="card-header"><h5 class="mb-0">{{$peca->name}}</h5> <a class="btn btn-success" href="{{ url('/catalogo' . '/'. $peca->id) }}">Ver Detalhes</a></h2>
+						<h2 class="card-header">{{$peca->name}} <a class="btn btn-success" href="{{ url('/catalogo' . '/'. $peca->id) }}">Ver Detalhes</a></h2>
 					</div>
 				@endforeach
 			</div>

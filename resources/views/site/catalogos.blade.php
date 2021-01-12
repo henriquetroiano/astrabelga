@@ -17,8 +17,11 @@
 					<h4>Nenhuma Peça Cadastrada</h4>
 				@endif
 				@foreach ($catalogos as $peca)
-					<div class="card">
-						<h2 class="card-header">{{$peca->name}} <a class="btn btn-success" href="{{ url('/catalogo' . '/'. $peca->id) }}">Ver Detalhes</a></h2>
+					<div class="card item-catalogue-client">
+						<div class="card-header">
+							<h4 class="mb-0 mr-2">{{$peca->name}}</h4> 
+							<a class="btn btn-success" href="{{ url('/catalogo' . '/'. $peca->id) }}">Ver Detalhes</a>
+						</div>
 					</div>
 				@endforeach
 			</div>

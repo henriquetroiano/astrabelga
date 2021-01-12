@@ -78,7 +78,10 @@
 .catalogue .clickCatalogue {
     color: #333 !important; text-decoration: none !important; display: block; width: 100%;
 }
-
+.catalogue .item-catalogue-client .card-header {
+    display: flex;
+    align-items: center;
+}
 
 
 

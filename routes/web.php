@@ -38,6 +38,9 @@ Route::get('/fichas-tecnica', function () {
     return view('site.fichas-tecnica');
 })->name('fichas-tecnica');
 
+Route::get('/quem-somos', function () {
+    return view('site.sobre');
+})->name('sobre');
 
 
 Auth::routes(['verify' => true]);

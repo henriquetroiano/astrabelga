@@ -10,7 +10,7 @@
 		@component('components.ads.horizontal')@endcomponent
 		<div class="card" style="width: 100%">
 			<div class="card-header">
-				<h4 class="mb-0">Catálogo de Peças Compatíveis / Intercambiáveis</h4>
+				<h1 class="mb-0">Catálogo de Peças Compatíveis / Intercambiáveis</h1>
 			</div>
 			<div class="card-body">
 				@if(count($catalogos) == 0)

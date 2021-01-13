@@ -13,8 +13,13 @@
             @if (count($videos) > 0)
                 @foreach ($videos as $video)
                     <div class="card my-3">
-                        <h3 class="card-header">{{$video->title}}</h3>
-                        <div class="card-body">
+                        <h3 class="card-header">
+                            {{$video->title}}
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_video_id_{{$video->id}}" aria-expanded="false" aria-controls="collapse_video_id_{{$video->id}}">
+                                Ver Vídeo +
+                              </button>
+                        </h3>
+                        <div class="card-body collapse" id="collapse_video_id_{{$video->id}}">
                             {!! $video->iframe !!}
                         </div>
                     </div>

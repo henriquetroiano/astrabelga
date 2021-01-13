@@ -33,7 +33,7 @@
           <a class="nav-link" href="{{ url('/fichas-tecnicas') }}">Fichas Técnicas</a>
         </li> --}}
         <li class="nav-item @if(Route::currentRouteName() == 'sobre') active @endif">
-          <a class="nav-link" href="{{ url('/sobre-nos') }}">Sobre Nós</a>
+          <a class="nav-link" href="{{ url('/quem-somos') }}">Quem Somos</a>
         </li>
       </ul>
         @if (Auth::user() )

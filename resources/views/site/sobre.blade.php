@@ -20,7 +20,7 @@
             <a href="https://chat.whatsapp.com/LwfIsErIfhCIScAQplhMMU" target="_blank" class="btn btn-success">Entrar no Grupo</a>
         </div>
     </div>
-    <div class="card mt-3">
+    <div class="card mt-3 mb-5">
         <div class="card-header">
             <h3 class="mb-0 text-center">Inscreva-se no nosso canal do Youtube!</h3>
         </div>

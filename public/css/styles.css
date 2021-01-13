@@ -12,3 +12,12 @@ body {
     box-sizing: border-box;
     font-size: 16px;
 }
+
+
+
+@media screen and (max-width: 1000px), (orientation: portrait) {
+    .btn-login {
+        margin-left: 0 !important;
+    }
+}
+

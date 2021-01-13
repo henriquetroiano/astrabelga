@@ -11,7 +11,7 @@
         <li class="nav-item @if(Route::currentRouteName() == 'home') active @endif" >
           <a class="nav-link" href="{{ url('/') }}">Página Inicial</a>
         </li>
-        <li class="nav-item @if(Route::currentRouteName() == 'catalogos') active @endif">
+        <li class="nav-item @if(Route::currentRouteName() == 'catalogos' or Route::currentRouteName() == 'catalogos_view') active @endif">
           <a class="nav-link" href="{{ url('/catalogos') }}">Catálogos de Peças</a>
         </li>
         <li class="nav-item @if(Route::currentRouteName() == 'documentos') active @endif">
@@ -37,7 +37,7 @@
         </li>
       </ul>
         @if (Auth::user() )
-            <div class="dropdown mr-n5 ml-3">
+            <div class="dropdown mr-n5 ml-3 btn-login">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                     {{ strtok(Auth::user()->name, ' ') }}

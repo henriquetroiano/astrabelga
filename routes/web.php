@@ -60,7 +60,7 @@ Route::post('/admin/catalogos/new', ['App\Http\Controllers\CatalogoController', 
 
 Route::get('/admin/catalogo/delete/{id}', ['App\Http\Controllers\CatalogoController', 'destroy'])->middleware('checkadmin');
 
-Route::get('/admin/catalogo/edit/{id}', ['App\Http\Controllers\CatalogoController', 'edit'])->middleware('checkadmin');
+Route::get('/admin/catalogo/edit/{id}', ['App\Http\Controllers\CatalogoController', 'edit'])->middleware('checkadmin')->name('AdminCatalogosEdit');
 
 Route::post('/admin/catalogo/{id}/name/edit', ['App\Http\Controllers\CatalogoController', 'edit_name_catalogo'])->middleware('checkadmin');
 

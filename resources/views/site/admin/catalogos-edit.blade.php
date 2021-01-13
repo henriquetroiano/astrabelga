@@ -66,7 +66,7 @@
 									@csrf
 									<div class="form-group">
 										<label for="image" class="card-header" style="width: 100%">Selecione uma imagem</label>
-										<input type="file" class="form-control" name="image[]" id="image" accept="image/*" multiple>
+										<input type="file" class="form-control py-1" name="image[]" id="image" accept="image/*" multiple>
 									</div>
 									<button type="submit" class="btn btn-success">Enviar</button>
 								</form>
@@ -116,14 +116,14 @@
 									</div>
 									<div class="form-group">
 										<label for="imagemmarca">Selecione as imagens do produto</label>
-										<input class="form-control" type="file" multiple accept="image/*" id="image" placeholder="Insira Fotos do seu Produto" name="image[]">
+										<input class="form-control py-1" type="file" multiple accept="image/*" id="image" placeholder="Insira Fotos do seu Produto" name="image[]">
 									</div>
 									<div class="form-group">
 										<label for="description">Breve descrição ou observação</label>
 										<input class="form-control" type="text" name="description" id="description">
 									</div>
 	
-									<button type="submit">Salvar</button>
+									<button type="submit" class="btn btn-success">Salvar</button>
 								</form>
 							</div>
 

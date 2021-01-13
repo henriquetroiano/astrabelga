@@ -442,15 +442,28 @@
 
 
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), (max-width: 1000px) {
     .container.admin {
         flex-direction: column;
         align-items: center;
     }
     .container.admin .left-nav {
-        width: 80%;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 2rem;
     }
     .container.admin .content {
-        width: 80%;
+        width: 100%;
     }
+    .container.admin .content input[type="file"] {
+        overflow: hidden;
+    }
+    .catalogos-edit .content .items .item.fotos-item form.sendfile {
+        min-width: unset;
+        width: 100%;
+    }
+    .content.videos .item-card .iframe p {
+        overflow: hidden;
+    }
+    
 }

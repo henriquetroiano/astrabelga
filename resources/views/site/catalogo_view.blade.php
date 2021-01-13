@@ -31,6 +31,14 @@
                         new Splide( '#splide_catalogo', {
                             type   : 'loop',
                             perPage: 3,
+                            breakpoints: {
+                                1000: {
+                                    perPage: 2,
+                                },
+                                700: {
+                                    perPage: 1,
+                                },
+                            }
                         } ).mount();
                     </script>
                 </div>
@@ -62,6 +70,14 @@
                                     new Splide( '#splide_marca{{$marca->id}}', {
                                         type   : 'loop',
                                         perPage: 3,
+                                        breakpoints: {
+                                            1000: {
+                                                perPage: 2,
+                                            },
+                                            700: {
+                                                perPage: 1,
+                                            },
+                                        }
                                     } ).mount();
                                 </script>
                             </div>

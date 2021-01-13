@@ -2,6 +2,8 @@
 
 @section('titlepage', 'Página Inicial')
 
+@section('metatag', 'Conheça a maior comunidade do Astra Belga no Brasil. Aqui você encontra tutoriais para manutenção do seu carro, dicas de peças, baixa gratuitamente os manuais. Participe também de nosso grupo no Whatsapp!')
+
 @section('content')
 
 

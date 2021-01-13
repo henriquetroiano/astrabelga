@@ -7,22 +7,22 @@
     {{--  metadata  --}}
     <!-- Primary Meta Tags -->
 <title>@yield('titlepage') | Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais </title>
-<meta name="title" content="Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais ">
-<meta name="description" content="Conheça a maior comunidade do Astra Belga no Brasil. Aqui você encontra tutoriais para manutenção do seu carro, dicas de peças, baixa gratuitamente os manuais. Participe também de nosso grupo no Whatsapp!">
+<meta name="title" content="@yield('titlepage') | Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais ">
+<meta name="description" content="@yield('metatag')">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://astrabelga.site/">
-<meta property="og:title" content="Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais ">
-<meta property="og:description" content="Conheça a maior comunidade do Astra Belga no Brasil. Aqui você encontra tutoriais para manutenção do seu carro, dicas de peças, baixa gratuitamente os manuais. Participe também de nosso grupo no Whatsapp!">
-<meta property="og:image" content="">
+<meta property="og:title" content="@yield('titlepage') | Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais ">
+<meta property="og:description" content="@yield('metatag')">
+<meta property="og:image" content="{{asset('images/metaimage.jpg')}}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="http://astrabelga.site/">
-<meta property="twitter:title" content="Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais ">
-<meta property="twitter:description" content="Conheça a maior comunidade do Astra Belga no Brasil. Aqui você encontra tutoriais para manutenção do seu carro, dicas de peças, baixa gratuitamente os manuais. Participe também de nosso grupo no Whatsapp!">
-<meta property="twitter:image" content="">
+<meta property="twitter:title" content="@yield('titlepage') | Tudo sobre o Astra Belga - Manutenção, Manuais, Tutoriais ">
+<meta property="twitter:description" content="@yield('metatag')">
+<meta property="twitter:image" content="{{asset('images/metaimage.jpg')}}">
 
 {{--  end metatags section  --}}
 

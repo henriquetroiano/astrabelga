@@ -12,7 +12,7 @@
 		<div class="card">
             <div class="card-header"><h2 class="mb-n2">{{$peca->name}}<h2></div>
             <div class="card-body">
-                <div class="fotos">
+                <div class="fotos my-3">
                     <div class="splide" id="splide_catalogo">
                         <div class="splide__track">
                             <ul class="splide__list">

@@ -2,6 +2,8 @@
 
 @section('titlepage', 'Catálogos')
 
+@section('metatag', 'Descrição da peça {{$peça->name}}')
+
 @section('content')
 
 

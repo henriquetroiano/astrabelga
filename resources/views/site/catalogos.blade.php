@@ -2,6 +2,8 @@
 
 @section('titlepage', 'Catálogos')
 
+@section('metatag', 'Clique e veja nosso catalogo de peças compatíveis!')
+
 @section('content')
 
 

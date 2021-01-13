@@ -2,6 +2,8 @@
 
 @section('titlepage', 'Quem Somos')
 
+@section('metatag', 'Veja um pouco mais sobre nós!')
+
 @section('content')
 
 @component('components.ads.horizontal')@endcomponent

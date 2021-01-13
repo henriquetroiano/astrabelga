@@ -2,6 +2,8 @@
 
 @section('titlepage', 'Documentos')
 
+@section('metatag', 'Baixe nossos documentos de ajuda!')
+
 @section('content')
 
 @component('components.ads.horizontal')@endcomponent

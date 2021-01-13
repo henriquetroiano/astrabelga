@@ -2,6 +2,8 @@
 
 @section('titlepage', 'Documentos')
 
+@section('metatag', 'Assista nossos vídeos e faça você mesmo!')
+
 @section('content')
 
 @component('components.ads.horizontal')@endcomponent
